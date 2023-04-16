@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Asg1 Will Hord</title>
+	</head>
+
+	<body onload="main()">
+		<canvas id="webgl" width="400" height="400"> </canvas>
+		<p id="numdot">XXX</p>
+		<p>
+			<input type="button" id="clear" value="Clear Canvas" onclick="" />
+		</p>
+		<p>
+			<label>Drawing Mode:</label>
+			<br />
+			<button id="square">Point</button>
+			<button id="triangle">Triangles</button>
+			<button id="circle">Circles</button>
+		</p>
+
+		<p>
+			<label>Shape Color:</label>
+			<br />
+			<label>Red</label>
+			<input type="range" min="0" max="100" value="100" id="red" />
+			<label>Green</label>
+			<input type="range" min="0" max="100" value="100" id="green" />
+			<label>Blue</label>
+			<input type="range" min="0" max="100" value="100" id="blue" />
+		</p>
+		<p>
+			<label>Shape Size:</label>
+			<input type="range" min="0" max="100" value="10" id="size" />
+			<label>(Circles) Segment Count:</label>
+			<input type="range" min="3" max="70" value="10" id="segments" />
+		</p>
+		<p>
+			<h3>Picture</h3>
+			<img src="IMG_0072.jpg" width="250">
+			<br>	
+			<button id="image">Draw Image</button>
+		</p>
+
+		<h3>Awesomeness</h3>
+		<p>Pressing the Awesomeness button will randomly replace all shapes as well as generate 15 more new shapes. It will also randomize the color of all shapes</p>
+		<button id="awesomeness">Awesomeness</button>
+		<br>
+		<label>Example of Awesomeness:</label><br>
+		<img src="awesomeness.png" width="250">
+
+		<script src="lib/webgl-utils.js"></script>
+		<script src="lib/webgl-debug.js"></script>
+		<script src="lib/cuon-utils.js"></script>
+		<script src="HelloPoint1.js"></script>
+		<script src="Triangle.js"></script>
+		<script src="Point.js"></script>
+		<script src="Circle.js"></script>
+		<script src="drawImage.js"></script>
+		<script src="awsomeness.js"></script>
+		<script src="ColoredPoints.js"></script>
+	</body>
+</html>
