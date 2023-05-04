@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Draw a blue rectangle (canvas version)</title>
+    </head>
+
+    <body onload="main()">
+        <canvas id="example" width="400" height="400">
+            Please use a browser that supports "canvas"
+        </canvas>
+        <script src="asg0.js"></script>
+        <script src="cuon-matrix-cse160.js"></script>
+        <br><br>
+
+        <form id="coordinates">
+            <div>
+                <label for="x">v1:x</label>
+                <input id="x" type="text" name="x" value="0"/>
+                <label for="y">y</label>
+                <input id="y" type="text" name="y" value="0"/>
+
+                <br><br>
+                <label for="i">v2:x</label>
+                <input id="i" type="text" name="i" value="0"/>
+                <label for="j">y</label>
+                <input id="j" type="text" name="j" value="0"/>
+            </div>
+            <div>
+                <input type="submit" value="Draw"/>
+            </div>
+        </form>
+
+        <br><br>
+        <form id="operations">
+            <div>
+                <label>Operation:</label>
+                <select id="operation">
+                    <option value="add">Add</option>
+                    <option value="subtract">Subtract</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="divide">Divide</option>
+                    <option value="magnitude">Magnitude</option>
+                    <option value="normalize">Normalize</option>
+                    <option value="angleBetween">Angle Between</option>
+                    <option value="area">Area</option>
+                </select>
+                <label for="scalar">Scalar</label>
+                <input id="scalar" type="text" name="scalar" />
+            </div>
+            <div>
+                <input type="submit" value="Draw" />
+            </div>
+        </form>
+
+        <script>
+            const form = document.getElementById("coordinates");
+            form.addEventListener("submit", handleDrawEvent);
+            const form1 = document.getElementById("operations");
+            form1.addEventListener("submit", handleDrawOperationEvent);
+        </script>
+
+    </body>
+</html>
