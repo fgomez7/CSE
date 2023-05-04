@@ -10,13 +10,17 @@
     Please use a browser that supports "canvas"
     </canvas>
 
+    <br></br>
     <button type="button" id="green">Green</button>
     <button type="button" id="red">Red</button>
-    <button type="button" id="clearButton">Clear</button>
-
+    <br></br>
+    
     <button type="button" id="pointButton">Point</button>
     <button type="button" id="triButton">Triangle</button>
     <button type="circle" id="circle">Circle</button>
+    <button type="draw" id="draw">Image</button>
+    <br></br>
+    <button type="button" id="clearButton">Clear</button>
 
     <p>
     Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide">
@@ -28,8 +32,10 @@
     <p>
     Size <input type="range" min="5" max="40" value="0" class="slider" id="sizeSlide">
     <p>
-    Circle Segment count: <input type="range" min="3" max="70" value="10" id="segments" />
+    Circle Number Segments: <input type="range" min="3" max="70" value="10" id="segments" />
     <p>
+    Pressing the Awesome button makes 3d triangle segments. I didn't do it right but go nuts. (PRETTIER IF YOU JUST CLICK, DON'T DRAG)</p>
+    <button type="button" id="awesome">Awesome</button>
 
     <script src="lib/webgl-utils.js"></script>
     <script src="lib/webgl-debug.js"></script>
@@ -38,5 +44,6 @@
     <script src="Triangle.js"></script>
     <script src="Point.js"></script>
     <script src="ColoredPoints.js"></script>
+    <script src="Stars.js"></script>
   </body>
 </html>

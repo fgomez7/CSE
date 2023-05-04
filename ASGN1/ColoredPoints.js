@@ -71,12 +71,14 @@ function connectVariablesToGLSL(){
 const POINT = 0;
 const TRIANGLE = 1;
 const CIRCLE = 2;
+const STARS = 3;
 
 //globals related to ui elements
 let g_selectedColor=[1.0, 1.0, 1.0, 1.0];
 let g_selectedSize=5.0;
 let g_selectedType=POINT;
 let g_segments = 10;
+let ranvar = 0;
 
 //set up actions for the html ui elements
 function addActionsForHtmlUI(){
@@ -85,6 +87,7 @@ function addActionsForHtmlUI(){
     document.getElementById('green').onclick = function() { g_selectedColor = [0.0, 1.0, 0.0, 1.0]; };
     document.getElementById('red').onclick = function() { g_selectedColor = [1.0, 0.0, 0.0, 1.0]; };
     document.getElementById('clearButton').onclick = function() {g_shapesList=[]; renderAllShapes();};
+    document.getElementById('draw').onclick = function () {drawDecepticonLogo();};
 
     document.getElementById('pointButton').onclick = function() {g_selectedType=POINT};
     document.getElementById('triButton').onclick = function() {g_selectedType=TRIANGLE};
@@ -99,6 +102,8 @@ function addActionsForHtmlUI(){
     document.getElementById('sizeSlide').addEventListener('mouseup', function() {g_selectedSize = this.value; });
 
     document.getElementById('segments').addEventListener('mouseup', function() {g_segments = this.value;});
+
+    document.getElementById('awesome').onclick = function() {g_selectedType=STARS};
 
 }
 
@@ -145,6 +150,10 @@ function click(ev) {
     }
     else if (g_selectedType==TRIANGLE) {
         point = new Triangle();
+    }
+    else{
+      point = new Star();
+      point.segments = g_segments;
     }
     point.position=[x,y];
     point.color=g_selectedColor.slice();
@@ -213,3 +222,61 @@ function renderAllShapes(){
 //     }
 //     htmlElm.innerHTML = text;
 // }
+
+function drawDecepticonLogo(){
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+
+  gl.uniform1f(u_Size, 5.0);
+  gl.uniform4f(u_FragColor, 1.0, 1.0, 1.0, 1.0);
+  drawTriangle([0.0, 0.0, 0.0, -.85, 0.18, 0.14]);
+  drawTriangle([0.0, -.85, 0.18, 0.14, 0.42, -0.25]);
+  drawTriangle([0.18, 0.14, 0.42, -0.25, 0.46, 0.18]);
+  drawTriangle([0.04, -.85, 0.5, -0.64, 0.64, 0.04]);
+  drawTriangle([0.42, -0.25, 0.49, 0.57, 0.64, 0.07]);
+  drawTriangle([0.49, 0.57, 0.64, 0.07, 0.71, 0.57]);
+  drawTriangle([0.49, 0.57, 0.74, 0.93, 0.71, 0.57]);
+  drawTriangle([0.0, 0.035, 0.18, 0.18, 0.0, 0.29]);
+  drawTriangle([0.0, 0.29, 0.18, 0.18, 0.071, 0.43]);
+  drawTriangle([0.071, 0.43, 0.18, 0.18, 0.29, 0.57]);
+  drawTriangle([0.071, 0.43, 0.0, 0.57, 0.29, 0.57]);
+  drawTriangle([0.071, 0.43, 0.0, 0.57, 0.0, 0.43]);
+  drawTriangle([0.071, 0.57, 0.29, 0.86, 0.29, 0.57]);
+  drawTriangle([0.5, 0.57, 0.29, 0.5, 0.48, 0.39]);
+  drawTriangle([0.25, 0.36, 0.29, 0.5, 0.48, 0.39]);
+  drawTriangle([0.25, 0.32, 0.46, 0.21, 0.48, 0.36]);
+  drawTriangle([0.25, 0.32, 0.46, 0.21, 0.21, 0.18]);
+
+  drawTriangle([0.0, 0.0, 0.0, -.85, -0.18, 0.14]);
+  drawTriangle([0.0, -.85, -0.18, 0.14, -0.42, -0.25]);
+  drawTriangle([-0.18, 0.14, -0.42, -0.25, -0.46, 0.18]);
+  drawTriangle([-0.04, -.85, -0.5, -0.64, -0.64, 0.04]);
+  drawTriangle([-0.42, -0.25, -0.49, 0.57, -0.64, 0.07]);
+  drawTriangle([-0.49, 0.57, -0.64, 0.07, -0.71, 0.57]);
+  drawTriangle([-0.49, 0.57, -0.74, 0.93, -0.71, 0.57]);
+  drawTriangle([0.0, 0.035, -0.18, 0.18, 0.0, 0.29]);
+  drawTriangle([0.0, 0.29, -0.18, 0.18, -0.071, 0.43]);
+  drawTriangle([-0.071, 0.43, -0.18, 0.18, -0.29, 0.57]);
+  drawTriangle([-0.071, 0.43, 0.0, 0.57, -0.29, 0.57]);
+  drawTriangle([-0.071, 0.43, 0.0, 0.57, 0.0, 0.43]);
+  drawTriangle([-0.071, 0.57, -0.29, 0.86, -0.29, 0.57]);
+  drawTriangle([-0.5, 0.57, -0.29, 0.5, -0.48, 0.39]);
+  drawTriangle([-0.25, 0.36, -0.29, 0.5, -0.48, 0.39]);
+  drawTriangle([-0.25, 0.32, -0.46, 0.21, -0.48, 0.36]);
+  drawTriangle([-0.25, 0.32, -0.46, 0.21, -0.21, 0.18]);
+  gl.uniform4f(u_FragColor, 1, 0, 0, 1.0);
+  drawTriangle([0.21, 0.0, 0.32, -0.07, 0.36, 0.04]);
+  drawTriangle([0.21, 0.0, 0.32, -0.07, 0.11, -0.18]);
+  drawTriangle([-0.21, 0.0, -0.32, -0.07, -0.36, 0.04]);
+  drawTriangle([-0.21, 0.0, -0.32, -0.07, -0.11, -0.18]);
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
+}
+
+function awesomeness(){
+  let variable1 = Math.random();
+  let variable2 = Math.random();
+  let variable3 = Math.random();
+
+  gl.clearColor(variable1, variable2, variable3, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+}
