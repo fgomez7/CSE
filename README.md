@@ -15,6 +15,9 @@ WebGL-Projects consists of assignments from my Intro to Computer Graphics Class.
 <!-- [Blocky 3D Animal](https://people.ucsc.edu/~fgomez7/CSE160/ASGN2/BlockyFox.html) - A 3D Cube Fox -->
 [Blocky 3D Animal](https://fgomez7.github.io/WebGl-Projects/ASGN2/BlockyFox.html) - A 3D Cube Fox
 
+[3D World](https://fgomez7.github.io/WebGl-Projects/ASGN3/The_World.html) - A traversable 3D world
+
+[Lighting World](https://fgomez7.github.io/WebGl-Projects/ASGN4/Lighting.html) - An addition of lighting to the 3D world
 
 ## Getting Started
 
