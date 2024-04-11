@@ -3,7 +3,8 @@
 WebGL-Projects consists of assignments from my Intro to Computer Graphics Class. Check them out, the links below will launch the projects. More projects coming out soon. 
 <!-- The first five were created using pure WebGL and the final one uses ThreeJS. Check them out at the links below or follow the instructions to test them locally: -->
 
-[Vector Drawer](https://people.ucsc.edu/~fgomez7/CSE160/ASGN0/asgn0.html) - Draw 2D vectors
+<!-- [Vector Drawer](https://people.ucsc.edu/~fgomez7/CSE160/ASGN0/asgn0.html) - Draw 2D vectors -->
+[Vector Drawer](https://fgomez7.github.io/WebGl-Projects/ASGN0/asgn0.html) - Draw 2D vectors
 
 [2D Paint](https://people.ucsc.edu/~fgomez7/CSE160/ASGN1/ColoredPoints.html) - Paint a scene with shapes in 2D
 
